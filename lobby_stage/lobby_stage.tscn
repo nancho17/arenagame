@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1n8e7avk0caw"]
+
+[ext_resource type="Script" path="res://lobby_stage/lobby_stage.gd" id="1_3rto6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2db81"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_qg8st"]
+
+[node name="LobbyStage" type="Node"]
+script = ExtResource("1_3rto6")
+
+[node name="ParameterStats" type="Node" parent="."]
+
+[node name="Resources" type="MarginContainer" parent="."]
+layout_direction = 1
+offset_right = 308.0
+offset_bottom = 201.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Resources"]
+layout_mode = 2
+
+[node name="Mining Resources" type="MarginContainer" parent="Resources/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="Panel" type="PanelContainer" parent="Resources/VBoxContainer/Mining Resources"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2db81")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Resources/VBoxContainer/Mining Resources/Panel"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+
+[node name="Res 1" type="MarginContainer" parent="Resources/VBoxContainer/Mining Resources/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Resources/VBoxContainer/Mining Resources/Panel/VBoxContainer/Res 1"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Resources/VBoxContainer/Mining Resources/Panel/VBoxContainer/Res 1/HBoxContainer"]
+modulate = Color(0.435, 0.456, 0.75, 1)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+expand_mode = 5
+
+[node name="ResName" type="Label" parent="Resources/VBoxContainer/Mining Resources/Panel/VBoxContainer/Res 1/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+text = "Res 1 :"
+label_settings = SubResource("LabelSettings_qg8st")
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Resources/VBoxContainer/Mining Resources/Panel/VBoxContainer/Res 1/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Value"
+label_settings = SubResource("LabelSettings_qg8st")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="StoreMenu" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"PanelResearch"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/StoreMenu"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/StoreMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="TextEdit" type="Label" parent="MarginContainer/StoreMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Menu"
+horizontal_alignment = 1
+language = "en"
+
+[node name="GoArena" type="Button" parent="MarginContainer/StoreMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Go Arena"
+
+[node name="MenuContinue" type="Button" parent="MarginContainer/StoreMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="MenuBackStore" type="Button" parent="MarginContainer/StoreMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="MenuQuitGame" type="Button" parent="MarginContainer/StoreMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "QuitGame"
