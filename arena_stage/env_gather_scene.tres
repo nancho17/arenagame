@@ -1,0 +1,28 @@
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://7mpu7anasts"]
+
+[ext_resource type="Sky" uid="uid://je6e8xp2tjvo" path="res://arena_stage/sky_clear.tres" id="1_g5r60"]
+
+[resource]
+background_mode = 2
+sky = ExtResource("1_g5r60")
+ambient_light_source = 2
+ambient_light_color = Color(1, 0.86, 0.6, 1)
+sdfgi_min_cell_size = 2.0
+sdfgi_cascade0_distance = 128.0
+sdfgi_max_distance = 2048.0
+sdfgi_y_scale = 0
+glow_normalized = true
+glow_intensity = 8.0
+glow_mix = 0.2
+glow_blend_mode = 4
+fog_mode = 1
+fog_light_color = Color(0.096, 0.122, 0.2, 1)
+fog_sun_scatter = 0.58
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_depth_curve = 0.450626
+fog_depth_begin = 210.0
+fog_depth_end = 250.0
+volumetric_fog_density = 0.0
+volumetric_fog_length = 200.0
+volumetric_fog_temporal_reprojection_enabled = false

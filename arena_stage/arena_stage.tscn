@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc3tougd5j2ju"]
+[gd_scene load_steps=4 format=3 uid="uid://cc3tougd5j2ju"]
 
 [ext_resource type="Script" path="res://arena_stage/arena_stage.gd" id="1_brgfc"]
+[ext_resource type="Environment" uid="uid://7mpu7anasts" path="res://arena_stage/env_gather_scene.tres" id="2_rvmfh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_s0sk0"]
 
 [node name="ArenaStage" type="Node"]
 script = ExtResource("1_brgfc")
+
+[node name="SceneWorld" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SceneWorld"]
+environment = ExtResource("2_rvmfh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SceneWorld/WorldEnvironment"]
+transform = Transform3D(0.997178, -0.0424482, 0.0619277, -0.0175497, 0.670197, 0.741976, -0.0729993, -0.740969, 0.66756, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SceneWorld"]
+mesh = SubResource("BoxMesh_s0sk0")

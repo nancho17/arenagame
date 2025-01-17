@@ -1,0 +1,15 @@
+[gd_resource type="Sky" load_steps=3 format=3 uid="uid://je6e8xp2tjvo"]
+
+[ext_resource type="Shader" path="res://arena_stage/stage_skybox.gdshader" id="1_fg01g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yhyyf"]
+shader = ExtResource("1_fg01g")
+shader_parameter/color_top = Color(0.91, 0.14, 1, 1)
+shader_parameter/color_horizon = Color(1, 0.4, 0.42, 1)
+shader_parameter/color_bottom = Color(1, 0.74, 0.39, 1)
+shader_parameter/exponent_factor_top = 1.0
+shader_parameter/exponent_factor_bottom = 1.0
+shader_parameter/intensity_amp = 1.0
+
+[resource]
+sky_material = SubResource("ShaderMaterial_yhyyf")
