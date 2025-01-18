@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=4 uid="uid://cc3tougd5j2ju"]
+[gd_scene load_steps=21 format=4 uid="uid://cc3tougd5j2ju"]
 
 [ext_resource type="Script" path="res://arena_stage/arena_stage.gd" id="1_brgfc"]
+[ext_resource type="Script" path="res://arena_stage/camera/camera_3d.gd" id="2_jgcxt"]
 [ext_resource type="Environment" uid="uid://7mpu7anasts" path="res://arena_stage/env_gather_scene.tres" id="2_rvmfh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_s0sk0"]
@@ -231,7 +232,7 @@ metallic = 0.35
 roughness = 0.91
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fksch"]
-albedo_color = Color(0.247059, 0.219608, 0.188235, 1)
+albedo_color = Color(0.870588, 0.6, 0.188235, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qqjkg"]
 resource_name = "Base7_Plane"
@@ -346,6 +347,11 @@ blend_shape_mode = 0
 script = ExtResource("1_brgfc")
 
 [node name="SceneWorld" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="SceneWorld"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.95, 14)
+fov = 55.0
+script = ExtResource("2_jgcxt")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SceneWorld"]
 environment = ExtResource("2_rvmfh")
@@ -551,6 +557,7 @@ mesh = SubResource("ArrayMesh_circp")
 skin = SubResource("Skin_34gc1")
 
 [node name="Skeleton" type="MeshInstance3D" parent="SceneWorld/Armature/Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.762067, 0, 0)
 mesh = SubResource("ArrayMesh_qqjkg")
 skin = SubResource("Skin_34gc1")
 
